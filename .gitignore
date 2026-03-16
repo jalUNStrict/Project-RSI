@@ -1,0 +1,24 @@
+# --- Backend (Python/Poetry) ---
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+poetry.lock
+.python-version
+
+# --- Frontend (React/Next.js) ---
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+Thumbs.db
