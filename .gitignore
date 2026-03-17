@@ -1,17 +1,25 @@
 # --- Backend (Python/Poetry) ---
-.venv/
-__pycache__/
-*.py[cod]
-*$py.class
-.env
-poetry.lock
+backend/.venv/
+backend/__pycache__/
+backend/poetry.lock
 .python-version
 
+# --- Docker & Database (Lokal di dalam folder backend) ---
+# Mengabaikan file database dan docker agar tidak bocor ke GitHub
+backend/alembic/
+backend/alembic.ini
+backend/docker-compose.yaml
+backend/data/
+
+# --- Source Code Spesifik (Opsional - Jika berisi kredensial/DB lokal) ---
+backend/src/backend/database.py
+backend/src/backend/models.py
+
 # --- Frontend (React/Next.js) ---
-node_modules/
-.next/
-out/
-build/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
 .DS_Store
 *.local
 npm-debug.log*
@@ -22,13 +30,3 @@ yarn-error.log*
 .vscode/
 .idea/
 Thumbs.db
-
-# --- Docker & Database (Lokal di dalam folder backend) ---
-backend/alembic/
-backend/alembic/versions
-backend/alembic.ini
-backend/docker-compose.yaml
-backend/data/
-backend/src/backend/database.py
-backend/src/backend/models.py
-backend/.venv/
