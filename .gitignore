@@ -22,3 +22,15 @@ yarn-error.log*
 .vscode/
 .idea/
 Thumbs.db
+
+# Untuk sekarang belum kepake soalnya ini untuk project besar
+# --- Docker & Database (Lokal) ---
+# --- Docker & Database (Lokal di dalam folder backend) ---
+backend/alembic/
+backend/alembic/versions/
+backend/alembic.ini
+backend/docker-compose.yaml
+backend/data/
+backend/src/backend/database.py
+backend/src/backend/models.py
+backend/.venv/
