@@ -81,7 +81,7 @@ def hapus_mahasiswa(mhs_id: int):
             del db_mahasiswa[index]
             return
     
-    raise HTTPException(status_code=404, detail="Data mahasiswa tidak ditemukan.")
+    raise HTTPException(status_code=404, detail="Data Mahasiswa tidak ditemukan.")
 
 @app.put("/mahasiswa/{mhs_id}", response_model=Mahasiswa)
 def update_mahasiswa(mhs_id: int, data_update: MahasiswaBase):
@@ -96,4 +96,4 @@ def update_mahasiswa(mhs_id: int, data_update: MahasiswaBase):
             return db_mahasiswa[index]
     
 
-    raise HTTPException(status_code=404, detail="Data mahasiswa tidak ditemukan.")
+    raise HTTPException(status_code=404, detail="Data Mahasiswa tidak ditemukan.")
