@@ -72,3 +72,28 @@ def tambah_mahasiswa(data_baru: MahasiswaBase):
     next_id += 1
     
     return mahasiswa_baru
+
+@app.delete("/mahasiswa/{mhs_id}", status_code=204)
+def hapus_mahasiswa(mhs_id: int):
+    """Menghapus data mahasiswa berdasarkan ID."""
+    for index, mhs in enumerate(db_mahasiswa):
+        if mhs.id == mhs_id:
+            del db_mahasiswa[index]
+            return
+    
+    raise HTTPException(status_code=404, detail="Data mahasiswa tidak ditemukan.")
+
+@app.put("/mahasiswa/{mhs_id}", response_model=Mahasiswa)
+def update_mahasiswa(mhs_id: int, data_update: MahasiswaBase):
+    """Memperbarui data mahasiswa berdasarkan ID."""
+    for index, mhs in enumerate(db_mahasiswa):
+        if mhs.id == mhs_id:
+            db_mahasiswa[index] = Mahasiswa(
+                id=mhs_id, 
+                nim=data_update.nim, 
+                nama=data_update.nama
+            )
+            return db_mahasiswa[index]
+    
+
+    raise HTTPException(status_code=404, detail="Data mahasiswa tidak ditemukan.")
